@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya | Premium Massage</title>
+    
+    <!-- Favicon: custom SVG (lotus + spark) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23020002' stroke='%23e5c158' stroke-width='2'/%3E%3Cpath d='M50 20 Q60 40 50 60 Q40 40 50 20' fill='%23e5c158' opacity='0.9'/%3E%3Cpath d='M30 45 Q45 55 55 70 Q35 65 30 45' fill='%23e5c158' opacity='0.7'/%3E%3Cpath d='M70 45 Q55 55 45 70 Q65 65 70 45' fill='%23e5c158' opacity='0.7'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23e5c158' opacity='0.9'/%3E%3Ccircle cx='50' cy='50' r='18' fill='none' stroke='%23e5c158' stroke-width='1.5' stroke-dasharray='3 5'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="magic-circle">
+            <svg class="preloader-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" stroke="#e5c158" stroke-width="1.5" stroke-dasharray="6 8" opacity="0.7"/>
+                <circle cx="50" cy="50" r="30" stroke="#e5c158" stroke-width="1" opacity="0.5"/>
+                <path d="M50 18 Q62 38 50 62 Q38 38 50 18" fill="#e5c158" opacity="0.85"/>
+                <path d="M26 42 Q48 52 62 76 Q38 66 26 42" fill="#e5c158" opacity="0.6"/>
+                <path d="M74 42 Q52 52 38 76 Q62 66 74 42" fill="#e5c158" opacity="0.6"/>
+                <circle cx="50" cy="50" r="9" fill="#e5c158"/>
+                <path d="M50 34 L53 46 L65 50 L53 54 L50 66 L47 54 L35 50 L47 46 Z" fill="#fff" opacity="0.9"/>
+                <circle cx="22" cy="22" r="2.5" fill="#e5c158" opacity="0.9"/>
+                <circle cx="78" cy="78" r="2.5" fill="#e5c158" opacity="0.9"/>
+                <circle cx="78" cy="22" r="2" fill="#8a2be2" opacity="0.8"/>
+                <circle cx="22" cy="78" r="2" fill="#8a2be2" opacity="0.8"/>
+            </svg>
+        </div>
+        <div class="preloader-text">
+            <div class="logo-text">
+                MAYA
+                <span class="sub">PREMIUM MASSAGE</span>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="particles-js"></canvas>
+
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" stroke="#e5c158" stroke-width="1.5" stroke-dasharray="6 8" opacity="0.7"/>
+                <circle cx="50" cy="50" r="30" stroke="#e5c158" stroke-width="1" opacity="0.5"/>
+                <path d="M50 18 Q62 38 50 62 Q38 38 50 18" fill="#e5c158" opacity="0.85"/>
+                <path d="M26 42 Q48 52 62 76 Q38 66 26 42" fill="#e5c158" opacity="0.6"/>
+                <path d="M74 42 Q52 52 38 76 Q62 66 74 42" fill="#e5c158" opacity="0.6"/>
+                <circle cx="50" cy="50" r="9" fill="#e5c158"/>
+                <path d="M50 34 L53 46 L65 50 L53 54 L50 66 L47 54 L35 50 L47 46 Z" fill="#fff" opacity="0.9"/>
+                <circle cx="22" cy="22" r="2.5" fill="#e5c158" opacity="0.9"/>
+                <circle cx="78" cy="78" r="2.5" fill="#e5c158" opacity="0.9"/>
+                <circle cx="78" cy="22" r="2" fill="#8a2be2" opacity="0.8"/>
+                <circle cx="22" cy="78" r="2" fill="#8a2be2" opacity="0.8"/>
+            </svg>
+            <div class="logo-text">
+                MAYA
+                <span class="sub">PREMIUM MASSAGE</span>
+            </div>
+        </a>
+        
+        <div class="nav-links">
+            <!--a href="#">Home</a-->
+            <a href="#services">Services</a>
+            <a href="#therapists">Therapists</a>
+            <a href="#booking">Book Now</a>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <header class="hero">
+        <h1>Premium Massage In Addis Ababa</h1>
+        <div class="hero-divider"></div>
+        <p class="hero-sub">Best Massage & True Relaxation</p>
+        <a href="#services" class="btn-magic">View Services</a>
+    </header>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="services-section" id="services">
+        <h2 class="section-title">Our Exclusive Services</h2>
+        <p class="section-subtitle">Select a category to explore our great relaxation offerings</p>
+
+        <!-- Category Tabs -->
+        <div class="services-tabs">
+            <button class="tab-btn active" onclick="switchCategory('signature', this)">SIGNATURE</button>
+            <button class="tab-btn" onclick="switchCategory('outcall', this)">OUTDOOR & HOTEL</button>
+            <button class="tab-btn" onclick="switchCategory('wellness', this)">WELLNESS & HEALING</button>
+        </div>
+
+        <!-- Featured Service Display Card -->
+        <div class="service-featured-card">
+            <div class="featured-img-container">
+                <img id="featuredImg" src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1200&auto=format&fit=crop" loading="lazy" alt="Featured Treatment">
+            </div>
+            <div class="featured-content">
+                <span class="featured-tag" id="featuredTag">✦ MOST POPULAR</span>
+                <h3 id="featuredTitle">Nuru Massage</h3>
+                <p id="featuredDesc">A sensual, deeply immersive glide technique using specialized organic gels. Experience weightless sensory elevation and full-body renewal.</p>
+                <div class="featured-actions">
+                    <span class="featured-duration" id="featuredDuration">⏱ 60 / 90 / 120 MINS</span>
+                    <button class="btn-magic" style="padding: 10px 24px; font-size: 0.85rem;" onclick="selectServiceFromFeatured()">Book This</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondary Services Grid -->
+        <div class="services-horizontal-list" id="servicesGrid">
+            <!-- Dynamically Populated by JavaScript -->
+        </div>
+    </section>    
+
+    <!-- ==================== THERAPISTS (8 TEAM MEMBERS - UNCOVERED BIG IMAGES) ==================== -->
+    <section class="therapists-section" id="therapists">
+        <h2 class="section-title">Our Therapists</h2>
+        <p class="section-subtitle">Meet our elite professionals dedicated to your ultimate relaxation</p>
+
+        <div class="therapists-grid">
+
+            <!-- Team 1 -->
+            <div class="therapist-card">
+                <div class="therapist-img-box">
+                    <img src="imgs/team-1.jpg" loading="lazy" alt="Sara">
+                </div>
+                <div class="therapist-info">
+                    <div>
+                        <h3>Hewan</h3>
+                        <span class="role">Senior Massage Therapist</span>
+                        <p>Expert in Nuru and deep tissue massage with 8 years of experience. She brings a mystical touch to every session.</p>
+                    </div>
+                    <div class="therapist-contact">
+                        <a href="https://wa.me/251901529662" target="_blank" rel="noopener" aria-label="WhatsApp Hewan">
+                            <span class="therapist-tooltip">WhatsApp</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://t.me/Makkkk17" target="_blank" rel="noopener" aria-label="Telegram Hewan">
+                            <span class="therapist-tooltip">Telegram</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+
+                        <a href="tel:+251901529662" aria-label="Call Hewan">
+                            <span class="therapist-tooltip">Direct Call</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 2 -->
+            <div class="therapist-card">
+                <div class="therapist-img-box">
+                    <img src="imgs/team-2.jpg" loading="lazy" alt="Hanna">
+                </div>
+                <div class="therapist-info">
+                    <div>
+                        <h3>Hani</h3>
+                        <span class="role">Body-to-Body Specialist</span>
+                        <p>Trained in advanced body therapy techniques for ultimate relaxation and a deep connection with the senses.</p>
+                    </div>
+                    <div class="therapist-contact">
+                        <a href="https://wa.me/251901529662" target="_blank" rel="noopener" aria-label="WhatsApp Hewan">
+                            <span class="therapist-tooltip">WhatsApp</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://t.me/Makkkk17" target="_blank" rel="noopener" aria-label="Telegram Hewan">
+                            <span class="therapist-tooltip">Telegram</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+
+                        <a href="tel:+251901529662" aria-label="Call Hewan">
+                            <span class="therapist-tooltip">Direct Call</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 3 -->
+            <div class="therapist-card">
+                <div class="therapist-img-box">
+                    <img src="imgs/team-3.jpg" loading="lazy" alt="Marta">
+                </div>
+                <div class="therapist-info">
+                    <div>
+                        <h3>Marta</h3>
+                        <span class="role">Hot Stone Expert</span>
+                        <p>Specializes in deep relaxation using heated basalt stones, melting away tension from the physical and spiritual body.</p>
+                    </div>
+                    <div class="therapist-contact">
+                        <a href="https://wa.me/251901529662" target="_blank" rel="noopener" aria-label="WhatsApp Hewan">
+                            <span class="therapist-tooltip">WhatsApp</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://t.me/Makkkk17" target="_blank" rel="noopener" aria-label="Telegram Hewan">
+                            <span class="therapist-tooltip">Telegram</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+
+                        <a href="tel:+251901529662" aria-label="Call Hewan">
+                            <span class="therapist-tooltip">Direct Call</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 4 (Midnight Relaxation Expert) -->
+            <div class="therapist-card">
+                <div class="therapist-img-box">
+                    <img src="imgs/team-4.jpg" loading="lazy" alt="Rahel">
+                </div>
+                <div class="therapist-info">
+                    <div>
+                        <h3>Rahel</h3>
+                        <span class="role">Midnight Relaxation Expert</span>
+                        <p>Specialized in late-night sessions and twilight wellness, helping you unwind completely before sleep.</p>
+                    </div>
+                    <div class="therapist-contact">
+                        <a href="https://wa.me/251901529662" target="_blank" rel="noopener" aria-label="WhatsApp Hewan">
+                            <span class="therapist-tooltip">WhatsApp</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://t.me/Makkkk17" target="_blank" rel="noopener" aria-label="Telegram Hewan">
+                            <span class="therapist-tooltip">Telegram</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+
+                        <a href="tel:+251901529662" aria-label="Call Hewan">
+                            <span class="therapist-tooltip">Direct Call</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 5 -->
+            <div class="therapist-card">
+                <div class="therapist-img-box">
+                    <img src="imgs/team-5.jpg" loading="lazy" alt="Tigist">
+                </div>
+                <div class="therapist-info">
+                    <div>
+                        <h3>Tigist</h3>
+                        <span class="role">Aromatherapy Expert</span>
+                        <p>Uses natural essential oils to help you breathe deeper and relax. Her presence is calm and grounding.</p>
+                    </div>
+                    <div class="therapist-contact">
+                        <a href="https://wa.me/251901529662" target="_blank" rel="noopener" aria-label="WhatsApp Hewan">
+                            <span class="therapist-tooltip">WhatsApp</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://t.me/Makkkk17" target="_blank" rel="noopener" aria-label="Telegram Hewan">
+                            <span class="therapist-tooltip">Telegram</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+
+                        <a href="tel:+251901529662" aria-label="Call Hewan">
+                            <span class="therapist-tooltip">Direct Call</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 6 -->
+            <div class="therapist-card">
+                <div class="therapist-img-box">
+                    <img src="imgs/team-6.jpg" loading="lazy" alt="Mimi">
+                </div>
+                <div class="therapist-info">
+                    <div>
+                        <h3>Meron</h3>
+                        <span class="role">Outdoor Service Therapist</span>
+                        <p>Brings the premium experience directly to your hotel or home. Fast, discreet, and always ready.</p>
+                    </div>
+                    <div class="therapist-contact">
+                        <a href="https://wa.me/251901529662" target="_blank" rel="noopener" aria-label="WhatsApp Hewan">
+                            <span class="therapist-tooltip">WhatsApp</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://t.me/Makkkk17" target="_blank" rel="noopener" aria-label="Telegram Hewan">
+                            <span class="therapist-tooltip">Telegram</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+
+                        <a href="tel:+251901529662" aria-label="Call Hewan">
+                            <span class="therapist-tooltip">Direct Call</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 7 -->
+            <div class="therapist-card">
+                <div class="therapist-img-box">
+                    <img src="imgs/team-7.jpg" loading="lazy" alt="Bethel">
+                </div>
+                <div class="therapist-info">
+                    <div>
+                        <h3>Beti</h3>
+                        <span class="role">Holistic Wellness Specialist</span>
+                        <p>Focuses on full restorative therapy, balancing energy pathways and relieving deep muscle fatigue.</p>
+                    </div>
+                    <div class="therapist-contact">
+                        <a href="https://wa.me/251901529662" target="_blank" rel="noopener" aria-label="WhatsApp Hewan">
+                            <span class="therapist-tooltip">WhatsApp</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://t.me/Makkkk17" target="_blank" rel="noopener" aria-label="Telegram Hewan">
+                            <span class="therapist-tooltip">Telegram</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+
+                        <a href="tel:+251901529662" aria-label="Call Hewan">
+                            <span class="therapist-tooltip">Direct Call</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 8 -->
+            <div class="therapist-card">
+                <div class="therapist-img-box">
+                    <img src="imgs/team-8.jpg" loading="lazy" alt="Eden">
+                </div>
+                <div class="therapist-info">
+                    <div>
+                        <h3>Eden</h3>
+                        <span class="role">Swedish & Glide Master</span>
+                        <p>Delivers smooth, long-stroke relaxation techniques tailored for absolute peace of mind and body.</p>
+                    </div>
+                    <div class="therapist-contact">
+                        <a href="https://wa.me/251901529662" target="_blank" rel="noopener" aria-label="WhatsApp Hewan">
+                            <span class="therapist-tooltip">WhatsApp</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://t.me/Makkkk17" target="_blank" rel="noopener" aria-label="Telegram Hewan">
+                            <span class="therapist-tooltip">Telegram</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+
+                        <a href="tel:+251901529662" aria-label="Call Hewan">
+                            <span class="therapist-tooltip">Direct Call</span>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+     <!-- ==================== FAQ SECTION ==================== -->
+    <section class="faq-section" id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about massage in Addis Ababa</p>
+
+        <div class="faq-list">
+
+            <details class="faq-item">
+                <summary>
+                    <span>Where is the best massage in Addis Ababa?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    <p>Maya Massage is widely considered the best massage in Addis Ababa. We are located on Atlas Road, serving Bole, Atlas, and the entire city with premium Nuru, Body-to-Body, Deep Tissue, and Hot Stone massages. We are open 24 hours a day, 7 days a week. Call or WhatsApp <a href="https://wa.me/251901529662" target="_blank" rel="noopener">+251 90 152 9662</a> to book.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span>Where is the best body to body massage in Addis Ababa?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    <p>Maya Massage is famous for the best body-to-body massage in Addis Ababa. Our trained therapists provide a relaxing, full-contact experience in a clean, private setting at our Atlas Road location in Bole. We also offer outdoor body-to-body massage to your home, hotel, or office anywhere in Addis Ababa.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span>How much does a massage cost in Addis Ababa?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    <p>The price of a massage in Addis Ababa depends on the service type and duration. At Maya Massage, prices vary between Nuru Massage, Body-to-Body Massage, Deep Tissue, Hot Stone, Swedish, and Aromatherapy. We offer 30-minute, 60-minute, 90-minute, and 120-minute sessions. Call or WhatsApp <a href="https://wa.me/251901529662" target="_blank" rel="noopener">+251 90 152 9662</a> for our current price list.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span>Do you offer outdoor or hotel massage service in Addis Ababa?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    <p>Yes. Our outdoor massage service brings the same professional massage to your home, hotel, or office anywhere in Addis Ababa — including Bole, Atlas, Kazanchis, and the surrounding areas. Perfect for busy clients, tourists, and guests who prefer privacy. Available 24 hours a day.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span>Is Maya Massage open 24 hours?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    <p>Yes we are open 24 hours a day, 7 days a week in Addis Ababa. You can visit us at Atlas Road anytime, or call <a href="tel:+251901529662">+251 90 152 9662</a> to book an outdoor massage service to your home or hotel.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span>What payment methods do you accept?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    <p>We accept cash, Telebirr, and bank transfer. All payments are handled discreetly.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    <span>Do you have female therapists?</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <div class="faq-answer">
+                    <p>Yes. We have both male and female therapists available. You can request your preference when booking by WhatsApp or phone.</p>
+                </div>
+            </details>
+
+        </div>
+    </section>
+
+    <!-- ==================== BOOKING SECTION ==================== -->
+    <section class="booking-section" id="booking">
+        <div class="booking-form-container">
+            <h2>Book Your Session</h2>
+            <p class="subtitle">Fill the details below to send us your request.</p>
+
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="clientName" placeholder="e.g., John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Service</label>
+                    <select id="serviceSelect" required>
+                        <option value="" disabled selected>-- Choose your service --</option>
+                        <option value="Nuru Massage">Nuru Massage</option>
+                        <option value="Body-to-Body Massage">Body-to-Body Massage</option>
+                        <option value="Deep Tissue Massage">Deep Tissue Massage</option>
+                        <option value="Swedish Massage">Swedish Massage</option>
+                        <option value="Hot Stone Massage">Hot Stone Massage</option>
+                        <option value="Four-Hands Massage">Four-Hands Massage</option>
+                        <option value="Aromatherapy Massage">Aromatherapy Massage</option>
+                        <option value="Couples Massage">Couples Massage</option>
+                        <option value="Outdoor Service">Outdoor Service</option>
+                        <option value="Private Home Session">Private Home Session</option>
+                        <option value="Hotel Outcall Special">Hotel Outcall Special</option>
+                        <option value="Late Night Delivery">Late Night Delivery</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" id="bookingDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Contact Preference</label>
+                    <div class="contact-toggle">
+                        <div class="contact-btn active" id="btnWhatsApp" onclick="setContactMethod('whatsapp')">WhatsApp</div>
+                        <div class="contact-btn" id="btnSMS" onclick="setContactMethod('sms')">Direct SMS</div>
+                        <div class="contact-btn" id="btnEmail" onclick="setContactMethod('email')">Email</div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Book Now via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="46" stroke="#e5c158" stroke-width="1.5" stroke-dasharray="6 8" opacity="0.7"/>
+                        <circle cx="50" cy="50" r="30" stroke="#e5c158" stroke-width="1" opacity="0.5"/>
+                        <path d="M50 18 Q62 38 50 62 Q38 38 50 18" fill="#e5c158" opacity="0.85"/>
+                        <path d="M26 42 Q48 52 62 76 Q38 66 26 42" fill="#e5c158" opacity="0.6"/>
+                        <path d="M74 42 Q52 52 38 76 Q62 66 74 42" fill="#e5c158" opacity="0.6"/>
+                        <circle cx="50" cy="50" r="9" fill="#e5c158"/>
+                        <path d="M50 34 L53 46 L65 50 L53 54 L50 66 L47 54 L35 50 L47 46 Z" fill="#fff" opacity="0.9"/>
+                        <circle cx="22" cy="22" r="2.5" fill="#e5c158" opacity="0.9"/>
+                        <circle cx="78" cy="78" r="2.5" fill="#e5c158" opacity="0.9"/>
+                        <circle cx="78" cy="22" r="2" fill="#8a2be2" opacity="0.8"/>
+                        <circle cx="22" cy="78" r="2" fill="#8a2be2" opacity="0.8"/>
+                    </svg>
+                    <div style="text-align: left;" class="logo-text">
+                        MAYA
+                        <span class="sub">PREMIUM MASSAGE</span>
+                    </div>
+                </a>
+                <p class="footer-tagline">Best Massage & True Relaxation</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-plain-list">
+                    <li>Nuru Massage</li>
+                    <li>Body-to-Body Massage</li>
+                    <li>Deep Tissue Massage</li>
+                    <li>Swedish Massage</li>
+                    <li>Hot Stone Massage</li>
+                    <li>Four-Hands Massage</li>
+                    <li>Aromatherapy Massage</li>
+                    <li>Couples Massage</li>
+                    <li>Outdoor Service</li>
+                    <li>Private Home Session</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <a href="https://wa.me/251901529662" target="_blank" rel="noopener">
+                            <span class="contact-icon whatsapp">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                </svg>
+                            </span>
+                            WhatsApp
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/Makkkk17" target="_blank" rel="noopener">
+                            <span class="contact-icon telegram">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                </svg>
+                            </span>
+                            Telegram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+251901529662">
+                            <span class="contact-icon call">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </span>
+                            Direct Call
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#therapists">Therapists</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Maya Premium Massage. All rights reserved. | Addis Ababa, Ethiopia</p>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING CONTACT HUB ==================== -->
+    <div class="contact-hub open" id="contactHub">
+        <a href="https://wa.me/251901529662" class="hub-item whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp Contact">
+            <span class="hub-tooltip">WhatsApp Contact</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+        </a>
+
+        <a href="https://t.me/Makkkk17" class="hub-item telegram" target="_blank" rel="noopener" aria-label="Telegram Contact">
+            <span class="hub-tooltip">Telegram Contact</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+        </a>
+
+        <a href="tel:+251901529662" class="hub-item call" aria-label="Direct Call">
+            <span class="hub-tooltip">Direct Call</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+            </svg>
+        </a>
+
+        <button class="hub-toggle" id="hubToggle" aria-label="Contact options" aria-expanded="true">
+        <svg class="hub-chevron" id="toggleIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Default: Long Horizontal Arrow (----->) -->
+            <path id="iconPath" d="M2 12 L22 12 M15 6 L22 12 L15 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    </div>
+
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
